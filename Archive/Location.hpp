@@ -21,10 +21,8 @@ private:
      The string is empty if this location has no special characteristic.
   */
   string m_special;
-  int m_id;
 
 public:
-  Location();
   Location(string, string, int); // initialize name, special and id.
 
   string get_name();  // returns this location's name characteristic.

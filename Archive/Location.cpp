@@ -1,14 +1,13 @@
+#include <iostream>
 
 #include <string>
 using namespace std;
 
 #include "Location.hpp"
 
-
 // constructor
 Location::Location(string name, string special, int id) : m_name(name),
-m_north(NULL), m_south(NULL), m_east(NULL), m_west(NULL), m_special(special),
-m_id(id)
+m_north(NULL), m_south(NULL), m_east(NULL), m_west(NULL), m_special(special)
 {}
 
 
@@ -36,19 +35,27 @@ void Location::remove_special(string special) {
 
 // Set a neighbor by setting the corresponding road appropriately.
 void Location::set_north(Location* northLocation, int numberOfDays) {
-	*m_north = Road(this, northLocation, numberOfDays);
+	Road newRoad = Road(this, northLocation, numberOfDays);
+	Road* ptr_Road = &newRoad;
+	m_north = ptr_Road;
 }
 
 void Location::set_south(Location* southLocation, int numberOfDays) {
-	*m_south = Road(this, southLocation, numberOfDays);
+	Road newRoad = Road(this, southLocation, numberOfDays);
+	Road* ptr_Road = &newRoad;
+	m_north = ptr_Road;
 }
 
 void Location::set_east(Location* eastLocation, int numberOfDays) {
-	*m_east = Road(this, eastLocation, numberOfDays);
+	Road newRoad = Road(this, eastLocation, numberOfDays);
+	Road* ptr_Road = &newRoad;
+	m_north = ptr_Road;
 }
 
 void Location::set_west(Location* westLocation, int numberOfDays) {
-	*m_west = Road(this, westLocation, numberOfDays);
+	Road newRoad = Road(this, westLocation, numberOfDays);
+	Road* ptr_Road = &newRoad;
+	m_north = ptr_Road;
 }
 
 // Get a neighbor - NULL if travel is not possible in that direction.

@@ -8,12 +8,14 @@
 
 class Map {
 private:
-  Location *m_start;  // the starting location of the map.
+  Location** m_start;  // the starting location of the map.
   int m_size;
 
 public:
   Map();  // initialize attributes appropriately.
   ~Map();  // deallocate memory for all roads and locations.
+
+  Location **array_of_locations; // array of locations
 
   void set_map();  // create the map of SeePlusia.
 

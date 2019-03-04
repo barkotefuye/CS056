@@ -3,6 +3,7 @@
 using namespace std;
 
 #include "Game.hpp"
+#include "Map.hpp"
 
 
 // initialize attributes, place player on the start of the map.
@@ -14,11 +15,19 @@ Game::Game() : m_map(Map()), m_player(Player()), m_days(0), m_game_over(false) {
 // the game loop
 void Game::run() {
 
-	cout << "Hello!" << endl;
-	/*
+	cout << "1" << endl;
+	m_map.set_map();
+
+	m_player.set_location(m_map.get_start_location());
+
+	cout << m_map.get_start_location()->get_name() << endl;
+
+	cout << m_player.get_location()->get_name() << endl;
+
 	// game introduction
-	this->execute_special("start");
-	m_player.get_location()->remove_special("start");
+	//execute_special("start");
+
+	//m_player.get_location()->remove_special("start");
 
     int choice;
     cin >> choice;
@@ -29,8 +38,8 @@ void Game::run() {
     }
 
 	// game loop
-	while (m_game_over == false || this->m_days < 31) {
-		this->show_state();
+	while (m_game_over == false && m_days < 31) {
+		show_state();
 
 		int direction;
 		cin >> direction;
@@ -153,10 +162,10 @@ void Game::run() {
 	}
 
 	// if player dies of starvation
-	if (m_game_over == true) {
+	if (m_game_over == false) {
 		cout << "You've died of hunger." << endl;
 	}
-	*/
+	m_map.~Map();
 }
 
 // execute the given special
@@ -176,7 +185,7 @@ void Game::execute_special(string special){
 	    cout << "Press any number followed by 'Enter' to play"
 	         << "\nPress '2' followed by 'Enter' to quit" << endl;
 	}
-
+	/*
 	// add crystal and remove special
 	else if (special == "crystal") {
 		cout << "You've found a crystal!" << endl;
@@ -207,15 +216,17 @@ void Game::execute_special(string special){
 			m_days = m_days + 1;
 		}
 	}
+	*/
 }
 
 // show current game state
 void Game::show_state(){
+
 	cout << "You are now at " << m_player.get_location()->get_name()
 		 << " with " << m_player.get_crystals() << " crystals." << endl;
 
     cout << "It is now day " << m_days <<
             ".\nWhat direction would you like to go?" << endl;
 
-    cout << "1: North\n2: West\n3: South\n 4: East" << endl;
+    cout << "1: North\n2: West\n3: South\n4: East" << endl;
 }

@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 #include <stddef.h>
 #include "Player.hpp"
 #include "Location.hpp"
@@ -10,7 +13,10 @@ Player::Player() : m_crystals(0), m_location(NULL)
 
 // move player to the given location.
 void Player::set_location(Location* location) {
+	cout << location->get_name() << endl;
 	m_location = location;
+	cout << m_location->get_name() << endl;
+	cout << "set location is done" << endl;
 }
 
 // get a pointer to the current location.
