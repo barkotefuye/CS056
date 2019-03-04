@@ -23,7 +23,7 @@ Player.o: player.cpp player.hpp location.hpp
 	clang++ -c -Wall -Wextra -pedantic -std=c++1z -g Player.cpp
   
 Location.o:location.cpp location.hpp road.hpp
-    	clang++ -c -Wall -Wextra -pedantic -std=c++1z -g Location.cpp
+	clang++ -c -Wall -Wextra -pedantic -std=c++1z -g Location.cpp
 
 clean:
 	rm -rf *.o *.dSYM run
