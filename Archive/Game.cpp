@@ -15,6 +15,7 @@ Game::Game() : m_map(Map()), m_player(Player()), m_days(0), m_game_over(false) {
 // the game loop
 void Game::run() {
 
+<<<<<<< HEAD
 	cout << "1" << endl;
 	m_map.set_map();
 
@@ -23,6 +24,9 @@ void Game::run() {
 	cout << m_map.get_start_location()->get_name() << endl;
 
 	cout << m_player.get_location()->get_name() << endl;
+=======
+	cout << "Hello!" << endl;
+>>>>>>> 1946bb301ef761dfb01b15d386e386cf498a2ed2
 
 	// game introduction
 	//execute_special("start");
@@ -165,7 +169,11 @@ void Game::run() {
 	if (m_game_over == false) {
 		cout << "You've died of hunger." << endl;
 	}
+<<<<<<< HEAD
 	m_map.~Map();
+=======
+	
+>>>>>>> 1946bb301ef761dfb01b15d386e386cf498a2ed2
 }
 
 // execute the given special
