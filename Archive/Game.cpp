@@ -15,7 +15,7 @@ Game::Game() : m_map(Map()), m_player(Player()), m_days(0), m_game_over(false) {
 void Game::run() {
 
 	cout << "Hello!" << endl;
-	/*
+
 	// game introduction
 	this->execute_special("start");
 	m_player.get_location()->remove_special("start");
@@ -156,7 +156,7 @@ void Game::run() {
 	if (m_game_over == true) {
 		cout << "You've died of hunger." << endl;
 	}
-	*/
+	
 }
 
 // execute the given special
